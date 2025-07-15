@@ -13,7 +13,7 @@ jobs:
           python-version: '3.10'
 
       - name: Docker Compose Up
-        run: docker-compose -f app/docker-compose.yml up --build -d
+        run: docker compose -f 'app\docker-compose.yml' up -d --build 'app' 
 
       - name: Run tests
         run: docker-compose exec test pytest
