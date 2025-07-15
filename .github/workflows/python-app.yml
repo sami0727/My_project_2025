@@ -14,5 +14,11 @@ jobs:
       - name: Install dependencies
         run: |
           pip install -r requirements.txt
+
+      - name: Start Flask app in background
+        run: |
+          nohup python app/app.py > flask.log 2>&1 &
+          sleep 5  # wait for server to start
+          
       - name: Run tests
         run: pytest tests/
