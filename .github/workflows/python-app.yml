@@ -18,7 +18,7 @@ jobs:
       - name: Start Flask app in background
         run: |
           python app/app.py &
-          sleep 10  # wait for server to start
+          sleep 5  # wait for server to start
 
       - name: Run tests
         run: pytest tests/
